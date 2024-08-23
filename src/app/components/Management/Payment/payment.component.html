@@ -1,0 +1,54 @@
+<div class="content-wrapper">
+  <!-- Content -->
+
+  <div class="container-xxl flex-grow-1 container-p-y">
+ 
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Basic Tables</h4>
+ 
+    <br><br>
+    <!-- Basic Bootstrap Table -->
+    <div class="card">
+      <h5 class="card-header">Quản lý thanh toán vé</h5>
+      <div class="table-responsive text-nowrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Booking ID</th>
+              <th>Kiểu thanh toán</th>
+              <th>Mã thanh toán</th>
+              <th>Mã vé</th>
+              <th>QR</th>
+              <th>Ngày thanh toán</th>
+              <th>Mô tả</th>
+              <th>Giá</th>
+              <th>Trạng thái</th>
+            </tr>
+          </thead>
+          <tbody class="table-border-bottom-0">
+            <ng-container *ngFor="let payment of payments">
+              <tr>
+                <th>{{payment.bookingID}}</th>
+                <th>{{payment.paymentType}}</th>
+                <th>{{payment.transactionNo}}</th>
+                <th>{{payment.ticketNumber}}</th>
+                <th>{{payment.QR}}</th>
+                <th>{{payment.created}}</th>
+                <th>{{payment.description}}</th>
+                <th>{{payment.price}}</th>
+                <th>{{payment.status ? 'Hoạt động' : 'Không hoạt động'}}</th>
+              </tr>
+            </ng-container>
+          
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!--/ Basic Bootstrap Table -->
+
+  
+    
+  <!-- / Footer -->
+
+  <div class="content-backdrop fade"></div>
+</div>
+<p-toast></p-toast>
